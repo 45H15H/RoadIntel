@@ -6,9 +6,14 @@ from google import genai
 import time
 from google.genai import types
 import PIL.Image
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure the Generative AI client
-client = genai.Client(api_key="AIzaSyCdJNYo6B5Pyug24oUj_wxPKelqtFYZh0Q")
+gemini_key = os.getenv("GEMINI_API_KEY")
+client = genai.Client(api_key=gemini_key)
 
 prompt_template = """Return analysis of the car. Include the color, make, type, and license plate. Return result in the following format like a python dictionary: {"color": "red", "make": "Toyota", "type": "car", "license plate": "ABC123"}.
 Don't use any formatting, just return the raw string."""
