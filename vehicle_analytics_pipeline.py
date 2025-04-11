@@ -15,9 +15,14 @@ import supervision as sv
 import cv2
 import numpy as np
 import uuid
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure the Generative AI client
-client = genai.Client(api_key="AIzaSyCmNNm9_ZR5csLkBsLsXbgJlDD9nNO_uYg")
+gemini_key = os.getenv("GEMINI_API_KEY")
+client = genai.Client(api_key=gemini_key)
 
 prompt_template = """Return analysis of the car. Include the color, make, type, and license plate. Return result in the following format like a python dictionary: {"color": "red", "make": "Toyota", "type": "car", "license plate": "ABC123"}. return the response in raw string format."""
 
