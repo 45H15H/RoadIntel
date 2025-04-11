@@ -162,7 +162,6 @@ def save_prediction(prediction: dict, video_frame: VideoFrame) -> None:
     cv2.namedWindow("Vehicle Analytics", cv2.WINDOW_NORMAL)
     cv2.resizeWindow("Vehicle Analytics", frame_width // 3, frame_height // 3)
     cv2.imshow("Vehicle Analytics", annotated_frame)
-    video_writer.write(annotated_frame)
     if cv2.waitKey(1) & 0xFF == ord("q"):
         cv2.destroyAllWindows()
         pipeline.terminate()
