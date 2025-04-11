@@ -1,4 +1,6 @@
 .vehicle_analytics/*
 models/*
 videos/*
-
+*.png
+*.csv
+*.env
