@@ -50,14 +50,26 @@ RoadIntel is an advanced vehicle analytics pipeline that leverages AI to detect,
    - Place your video files in the `videos/` directory.
    - Ensure the `cropped_images/` folder exists for saving processed images.
 
-6. **Configure .env File**
+6. **Update the Script**
+   Modify the `vehicle_analytics_pipeline.py` script to set the correct paths for your video files and models if necessary.
+
+   ```python
+   # Example path settings
+   video_path = 'videos/your_video.mp4'
+   model_path = 'models/yolo_model.pt'
+   ```
+
+   Update the detection polygon and filter polygon as per your requirements.
+   Upload the video frame to polygonzone.roboflow.com and get the polygon array.
+
+7. **Configure .env File**
    Create a `.env` file in the root directory and set the following environment variables:
 
    ```bash
    GEMINI_API_KEY=your_gemini_api_key
    ```
 
-7. **Run the Pipeline**
+8. **Run the Pipeline**
    Execute the main script to start the vehicle analytics pipeline:
 
    ```bash
