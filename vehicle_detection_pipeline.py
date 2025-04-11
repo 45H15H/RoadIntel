@@ -35,12 +35,6 @@ frame_height, frame_width = first_frame.shape[:2]
 fps = cap.get(cv2.CAP_PROP_FPS)
 cap.release()
 
-# Initialize the VideoWriter
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for the output video
-output_video_path = r".\annotated_videos\annotated_highway_2.mp4"  # Path for the output video
-frame_rate = fps  # Adjust according to the input video's frame rate
-video_writer = cv2.VideoWriter(output_video_path, fourcc, frame_rate, (frame_width, frame_height))
-
 def get_crops(detections, image):
     result = {}
     for bbox, class_name in zip(detections.xyxy, detections.data["class_name"]):
