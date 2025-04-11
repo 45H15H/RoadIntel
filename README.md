@@ -1,8 +1,9 @@
 # RoadIntel
 
-RoadIntel is an advanced vehicle analytics pipeline that leverages AI to detect, analyze, and extract insights from vehicle images and videos. It processes vehicle data in real-time, providing details such as vehicle type, color, make, and license plate information. This project is designed to be a robust solution for traffic monitoring, vehicle tracking, and intelligent transportation systems.
+RoadIntel is an advanced vehicle analytics pipeline that leverages AI to detect, analyze, and extract insights from vehicle videos. It processes vehicle data in real-time, providing details such as vehicle type, color, make, and license plate information. This project is designed to be a robust solution for traffic monitoring and vehicle tracking.
 
 ## Features
+
 - Real-time vehicle detection and tracking.
 - On-the-fly image analysis using Gemini AI.
 - Automatic saving of analysis results to a CSV file.
@@ -12,6 +13,7 @@ RoadIntel is an advanced vehicle analytics pipeline that leverages AI to detect,
 ## Setup Instructions
 
 ### Prerequisites
+
 1. **Python**: Ensure Python 3.8 or later is installed.
 2. **Pip**: Make sure `pip` is installed for managing Python packages.
 3. **Virtual Environment (Optional)**: It is recommended to use a virtual environment to manage dependencies.
@@ -19,19 +21,24 @@ RoadIntel is an advanced vehicle analytics pipeline that leverages AI to detect,
 ### Installation Steps
 
 1. **Clone the Repository**
+
    ```bash
-   git clone <repository-url>
-   cd Vehicle_Analytics
+   git clone https://github.com/45H15H/RoadIntel.git
+   cd RoadIntel
    ```
 
 2. **Set Up Virtual Environment (Optional)**
+
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv .vehicle_analytics
+   source .vehicle_analytics/bin/activate  # On Windows: .vehicle_analytics\Scripts\activate
    ```
 
 3. **Install Dependencies**
-   Install the required Python packages using the `requirements.txt` file:
+   Before installing the dependencies using `requirements.txt`, ensure you have PyTorch installed as per your system configuration. You can find the installation instructions at [PyTorch's official site](https://pytorch.org/get-started/locally/).
+
+   Install rest of the required Python packages using the `requirements.txt` file:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -43,18 +50,27 @@ RoadIntel is an advanced vehicle analytics pipeline that leverages AI to detect,
    - Place your video files in the `videos/` directory.
    - Ensure the `cropped_images/` folder exists for saving processed images.
 
-6. **Run the Pipeline**
+6. **Configure .env File**
+   Create a `.env` file in the root directory and set the following environment variables:
+
+   ```bash
+   GEMINI_API_KEY=your_gemini_api_key
+   ```
+
+7. **Run the Pipeline**
    Execute the main script to start the vehicle analytics pipeline:
+
    ```bash
    python vehicle_analytics_pipeline.py
    ```
 
 ### Output
+
 - Processed images are saved in the `cropped_images/` folder.
 - Analysis results are stored in `vehicle_analytics_result.csv`.
-- Annotated videos are saved in the `annotated_videos/` folder (if configured).
 
 ## Folder Structure
+
 ```
 Vehicle_Analytics/
 ├── cropped_images/          # Folder for saving cropped vehicle images
@@ -67,12 +83,11 @@ Vehicle_Analytics/
 ```
 
 ## Contributing
+
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ## Acknowledgments
+
 - YOLO for object detection.
 - Gemini AI for advanced image analysis.
 - Supervision (SV) for detection and tracking utilities.
